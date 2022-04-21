@@ -209,7 +209,7 @@ footer p {
 @media only screen and (max-width: 600px) {
     #saida-texto {
     height: 120px;
-    width: 40px;
+    width: 70px;
     display: flex;
     background-repeat: no-repeat;
     overflow: auto;
