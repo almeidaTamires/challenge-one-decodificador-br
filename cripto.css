@@ -1,0 +1,256 @@
+/*css do display da página*/
+body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background:linear-gradient(to right, #9929ea, #5808fb);
+    }
+  /*css das 3 grids da página*/  
+.logo {
+     grid-area: 1 / 1 / 2 / 6; 
+     display: inline-table;
+    }
+.direito { 
+    grid-area: 2 / 1 / 6 / 4;
+    margin: 40px 0 0 40px;
+ }
+.esquerdo {
+     grid-area: 2 / 4 / 6 / 6;
+ }
+
+ .logo {
+     margin: 40px 0 5px 40px;
+ }
+
+
+ /*css do textarea*/
+#entrada-texto {
+    height: 48px;
+    width: 50%;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: 3px solid #5808fb;
+    font-family: Inter;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+#entrada-texto::placeholder {
+    color: #0A3871;
+
+}
+
+#saida-texto {
+    background-image:url(homenzinho.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
+    width: 300px;
+    top: 1096px;
+    border: 3px solid #5808fb;
+    border-radius: 32px;
+    padding: 30px;
+    margin: 5px -5px;
+}
+#saida-texto::placeholder {
+font-family: inter;
+color: #0A3871;
+}
+/*css dos botoes de criptografar, descriptografar e copiar*/
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    top: 120px;
+    position: relative;
+}
+
+ #cript {
+    background: #5808fb;
+    height: 5px;
+    width: 30%;
+    border-radius: 24px;
+    padding: 30px;
+    margin: 5px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /*efeito de transição*/
+    transition: all linear 1s;
+    color: #fff;
+ }
+#cript:hover {
+    background: #a509ef;
+    color: #fff;
+}
+
+ #descript {
+    background: #D8DFE8;
+    height: 5px;
+    width: 30%;
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    margin: 5px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /*efeito de transição*/
+    transition: all linear 1s;
+    color: #000;
+ }
+#descript:hover {
+    background: #a509ef;
+    color: #fff;
+
+}
+
+ #copy {
+    position: relative;
+    bottom: 200px;
+    right: 300px;
+    height: 10px;
+    width: 40%;
+    height: 5px;
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    margin: 5px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ /*efeito de transição*/
+    transition: all linear 1s;
+    color: #000;
+ }
+#copy:hover {
+    background: #a509ef;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #9929ea;
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background: #1c09ef;
+    border-radius: 30px;
+
+}
+
+
+ footer {
+    position: fixed;
+    bottom:0;
+    left:3px;
+}
+footer img {
+    margin-right: 5px;
+    
+}
+footer a :hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+
+}
+footer p {
+    padding: 10px;
+}
+
+
+ @media only screen and (max-width: 600px) {
+    .direito .esquerdo {
+    display: grid;
+    align-content: space-around;
+    justify-content: start;
+    align-items: center;
+    justify-items: center;
+    margin: 10px;
+    height: 5px;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+    #entrada-texto{
+        margin: 10px;
+        line-height: 25px;
+        border-radius: 32px;
+        padding: 30px;
+        height: 100px;
+        margin: -10px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #saida-texto {
+    height: 120px;
+    width: 40px;
+    display: flex;
+    background-repeat: no-repeat;
+    overflow: auto;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #saida-texto::placeholder{
+       color: #fff;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #cript, #descript {
+        height: 60px;
+        width: 120px;
+        display: flex;
+        align-items: flex-start;
+        line-height: 5px;
+        flex-direction: column-reverse;
+        align-content: stretch;
+        justify-content: space-evenly;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #copy {
+        height: 60px;
+        width: 120px;
+        display: flex;
+        align-items: flex-start;
+        line-height: 5px;
+        flex-direction: column-reverse;
+        align-content: stretch;
+        justify-content: space-evenly;
+        position: relative;
+        bottom: 100px;
+        left: -11px;
+    }
+}
+
