@@ -9,12 +9,14 @@ Não permite acentuação.
 */
 //g - para diferenciar "A de a"
 
+//variaveis para acessaros elementos
 var areaTexto = document.querySelector("#entrada-texto").value;
 var btnCript = document.querySelector("#cript"); btnCript.onclick = codificar;
 var btnDescript = document.querySelector("#descript"); btnDescript.onclick = descodifica;
 var btnCopiar = document.querySelector("#copy"); btnCopiar.onclick = copiarTexto;
 var saida = document.querySelector("#saida-texto").value;
 
+//codificar
 function codificar (){
     var texto = document.querySelector("#entrada-texto").value;
     var codifica = texto.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat").replace(/[ABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúãõâêîôûÁÉÍÓÚÂÊÎÔÛÃÕ@#$%&*123456789]/g, "  Apenas letras minúsculas e sem acento ");
@@ -25,14 +27,14 @@ function codificar (){
     }
   }
 
-
+    //descodificar
     function descodifica(){
     var texto = document.querySelector("#entrada-texto").value;
-    var descodifica = texto.replace(/enter/gi,"e").replace(/imes/gi,"i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
+    var descodifica = texto.replace(/enter/g,"e").replace(/imes/g,"i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
     document.querySelector("#saida-texto").value = descodifica;
     document.querySelector("#entrada-texto").value;
 }
-
+  //copiar
 function copiarTexto(){
     var texCopia = document.querySelector("#saida-texto").value;
     navigator.clipboard.writeText(texCopia);
