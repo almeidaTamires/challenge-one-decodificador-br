@@ -25,6 +25,7 @@ function codificar (){
     }
   }
 
+
     function descodifica(){
     var texto = document.querySelector("#entrada-texto").value;
     var descodifica = texto.replace(/enter/gi,"e").replace(/imes/gi,"i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
