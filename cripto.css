@@ -1,28 +1,39 @@
 /*css do display da página*/
-body {
+.content {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    height: 100%;
+    grid-template: 
+    'header header header header'
+    'entrada entrada saida saida'
+    'entrada entrada saida saida'
+    'footer footer footer footer';
+    gap: 10px;
+/*    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-row-gap: 0px; */
     background:linear-gradient(to right, #9929ea, #5808fb);
     }
   /*css das 3 grids da página*/  
+.header {
+    grid-area: header;
+}
 .logo {
-     grid-area: 1 / 1 / 2 / 6; 
      display: inline-table;
     }
 .direito { 
-    grid-area: 2 / 1 / 6 / 4;
+    grid-area: entrada;
     margin: 40px 0 0 40px;
  }
 .esquerdo {
-     grid-area: 2 / 4 / 6 / 6;
- }
+    margin: 0 auto;
+    grid-area: saida;
+}
 
- .logo {
-     margin: 40px 0 5px 40px;
- }
+.logo {
+    margin: 40px 0 5px 40px;
+}
 
 
  /*css do textarea*/
@@ -63,13 +74,10 @@ color: #0A3871;
 /*css dos botoes de criptografar, descriptografar e copiar*/
 .botoes {
     display: flex;
-    flex-direction: column;
-    align-items:flex-start;
     top: 120px;
-    position: relative;
 }
 
- #cript {
+#cript {
     background: #5808fb;
     height: 5px;
     width: 30%;
@@ -82,19 +90,18 @@ color: #0A3871;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: center;
-    display:flex;
     align-items: center;
     justify-content: center;
     /*efeito de transição*/
     transition: all linear 1s;
     color: #fff;
- }
+}
 #cript:hover {
     background: #a509ef;
     color: #fff;
 }
 
- #descript {
+#descript {
     background: #D8DFE8;
     height: 5px;
     width: 30%;
@@ -107,20 +114,19 @@ color: #0A3871;
     font-weight: 400;
     line-height: 19px;
     letter-spacing: 0em;
-    display:flex;
     align-items: center;
     justify-content: center;
     /*efeito de transição*/
     transition: all linear 1s;
     color: #000;
- }
+}
 #descript:hover {
     background: #a509ef;
     color: #fff;
 
 }
 
- #copy {
+#copy {
     position: relative;
     bottom: 200px;
     right: 300px;
@@ -143,7 +149,7 @@ color: #0A3871;
  /*efeito de transição*/
     transition: all linear 1s;
     color: #000;
- }
+}
 #copy:hover {
     background: #a509ef;
     color: #fff;
@@ -161,10 +167,12 @@ color: #0A3871;
     border-radius: 30px;
 
 }
+.footer{
+    grid-area: footer;
+    text-align: center;
+}
 
-
- footer {
-    position: fixed;
+footer {
     bottom:0;
     left:3px;
 }
@@ -183,7 +191,14 @@ footer p {
 }
 
 
- @media only screen and (max-width: 600px) {
+ @media (max-width: 600px) {
+    .content{
+        grid-template: 
+        'header header'
+        'entrada entrada'
+        'saida saida '
+        'footer footer';
+    }
     .direito .esquerdo {
     display: grid;
     align-content: space-around;
@@ -194,10 +209,7 @@ footer p {
     height: 5px;
     width: 80%;
   }
-}
-
-@media only screen and (max-width: 600px){
-    #entrada-texto{
+  #entrada-texto{
         margin: 10px;
         line-height: 25px;
         border-radius: 32px;
@@ -205,52 +217,33 @@ footer p {
         height: 100px;
         margin: -10px;
     }
-}
-@media only screen and (max-width: 600px) {
     #saida-texto {
-    height: 120px;
-    width: 70px;
-    display: flex;
-    background-repeat: no-repeat;
-    overflow: auto;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+        height: 120px;
+        width: 70px;
+        display: flex;
+        background-repeat: no-repeat;
+        overflow: auto;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
-}
-@media only screen and (max-width: 600px) {
     #saida-texto::placeholder{
        color: #fff;
     }
-}
-
-@media only screen and (max-width: 600px) {
     #cript, #descript {
         height: 60px;
         width: 120px;
-        display: flex;
-        align-items: flex-start;
         line-height: 5px;
-        flex-direction: column-reverse;
         align-content: stretch;
         justify-content: space-evenly;
     }
-}
-
-@media only screen and (max-width: 600px) {
     #copy {
         height: 60px;
         width: 120px;
-        display: flex;
-        align-items: flex-start;
-        line-height: 5px;
-        flex-direction: column-reverse;
-        align-content: stretch;
-        justify-content: space-evenly;
-        position: relative;
         bottom: 100px;
         left: -11px;
     }
 }
+
 
